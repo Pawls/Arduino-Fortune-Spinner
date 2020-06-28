@@ -46,42 +46,42 @@ void displayFortune(int roll){
     case 0:
       lcd.print("ROLLED FORTUNE 1");
       lcd.setCursor(0,1);
-      lcd.print("2ND LINE 16 CHAR");
+      lcd.print("Learn from mistakes to improve");
       break;
     case 1:
       lcd.print("ROLLED FORTUNE 2");
       lcd.setCursor(0,1);
-      lcd.print("2ND LINE 16 CHAR");
+      lcd.print("It is not unwise to ask for help");
       break;
     case 2:
       lcd.print("ROLLED FORTUNE 3");
       lcd.setCursor(0,1);
-      lcd.print("2ND LINE 16 CHAR");
+      lcd.print("Practice makes perfect");
       break;
     case 3:
       lcd.print("ROLLED FORTUNE 4");
       lcd.setCursor(0,1);
-      lcd.print("2ND LINE 16 CHAR");
+      lcd.print("Knowledge comes with time");
       break;
     case 4:
       lcd.print("ROLLED FORTUNE 5");
       lcd.setCursor(0,1);
-      lcd.print("2ND LINE 16 CHAR");
+      lcd.print("Give first in order to take");
       break;
     case 5:
       lcd.print("ROLLED FORTUNE 6");
       lcd.setCursor(0,1);
-      lcd.print("2ND LINE 16 CHAR");
+      lcd.print("Good things can be unexpected");
       break;
     case 6:
       lcd.print("ROLLED FORTUNE 7");
       lcd.setCursor(0,1);
-      lcd.print("2ND LINE 16 CHAR");
+      lcd.print("It is time to try something new");
       break;
     case 7:
       lcd.print("ROLLED FORTUNE 8");
       lcd.setCursor(0,1);
-      lcd.print("2ND LINE 16 CHAR");
+      lcd.print("Welcome changes in your life");
       break;
   }
   delay(1000);
