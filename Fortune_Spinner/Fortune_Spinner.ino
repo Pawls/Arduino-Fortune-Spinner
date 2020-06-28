@@ -1,3 +1,5 @@
+#include <Wire.h>
+
 #include <Stepper.h>
 
 const int spr = 2048;
@@ -9,7 +11,7 @@ bool active;
 
 void setup() {
   Serial.begin(9600);
-  myStepper.setSpeed(10);
+  myStepper.setSpeed(13);
 }
 
 void loop() {
@@ -23,7 +25,7 @@ void loop() {
 
 void serialEvent(){
   //myStepper.setSpeed(Serial.parseInt());
-  myStepper.step(spr/8);
+  myStepper.step((spr/8)*(4+random(0,9)));
   //active = true;
   while(Serial.available()){
     Serial.read();
