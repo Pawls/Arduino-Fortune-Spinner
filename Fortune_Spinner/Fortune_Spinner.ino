@@ -24,10 +24,10 @@ void setup() {
   myStepper.setSpeed(13);
   lcd.begin(16, 2);
   lcd.print("Fortune Spinner");
+  myStepper.step((spr/8)*8);
 }
 
 void loop() {
-  //Serial.println(digitalRead(buzz_pin));
   if(digitalRead(button_pin) == HIGH && button_pressed == false){
     button_pressed = true;
     rand_spin = random(0,8);
