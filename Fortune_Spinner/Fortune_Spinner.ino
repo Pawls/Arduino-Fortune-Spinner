@@ -44,44 +44,44 @@ void displayFortune(int roll){
   delay(200);
   switch(roll){
     case 0:
-      lcd.print("ROLLED FORTUNE 1");
+      lcd.print("Be self-aware");
       lcd.setCursor(0,1);
-      lcd.print("Learn from mistakes to improve");
+      lcd.print("of your mistakes");
       break;
     case 1:
-      lcd.print("ROLLED FORTUNE 2");
+      lcd.print("It is not unwise");
       lcd.setCursor(0,1);
-      lcd.print("It is not unwise to ask for help");
+      lcd.print("to ask for help");
       break;
     case 2:
-      lcd.print("ROLLED FORTUNE 3");
+      lcd.print("Practice creates");
       lcd.setCursor(0,1);
-      lcd.print("Practice makes perfect");
+      lcd.print("perfection");
       break;
     case 3:
-      lcd.print("ROLLED FORTUNE 4");
+      lcd.print("Knowledge will");
       lcd.setCursor(0,1);
-      lcd.print("Knowledge comes with time");
+      lcd.print("come with time");
       break;
     case 4:
-      lcd.print("ROLLED FORTUNE 5");
+      lcd.print("Give first in");
       lcd.setCursor(0,1);
-      lcd.print("Give first in order to take");
+      lcd.print("order to take");
       break;
     case 5:
-      lcd.print("ROLLED FORTUNE 6");
+      lcd.print("Good things can");
       lcd.setCursor(0,1);
-      lcd.print("Good things can be unexpected");
+      lcd.print("be unexpected");
       break;
     case 6:
-      lcd.print("ROLLED FORTUNE 7");
+      lcd.print("Love truth,");
       lcd.setCursor(0,1);
-      lcd.print("It is time to try something new");
+      lcd.print("but pardon error");
       break;
     case 7:
-      lcd.print("ROLLED FORTUNE 8");
+      lcd.print("Welcome changes");
       lcd.setCursor(0,1);
-      lcd.print("Welcome changes in your life");
+      lcd.print("in your life");
       break;
   }
   delay(1000);
