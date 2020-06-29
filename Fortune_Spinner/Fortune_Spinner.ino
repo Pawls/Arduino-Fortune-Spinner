@@ -1,12 +1,13 @@
 #include <Wire.h>
 #include <Stepper.h>
 #include <LiquidCrystal.h>
-#include <Notes.h>
-#include <pitches.h>
+#include "Notes.h"
+//#include "pitches.h"
+#include <Adafruit_INA219.h>
 
+Adafruit_INA219 ina219;
 
 //Pin definitions
-const int button_pin = 12;
 const int buzz_pin = 13;
 
 //initialize LCD
@@ -22,18 +23,29 @@ int current_fortune = 0;
 
 void setup() {
   pinMode(buzz_pin, OUTPUT);
-  pinMode(button_pin, INPUT);
-  Serial.begin(9600);
+  Serial.begin(115200);
   myStepper.setSpeed(13);
   lcd.begin(16, 2);
   lcd.print("Fortune Spinner");
   myStepper.step((spr/8)*8);
+
+  //initialize the INA219 current sensor
+  if (! ina219.begin()) {
+    Serial.println("Failed to find INA219 chip");
+    while (1) { delay(10); }
+  }
+  
 }
 
 void loop() {
-  if(digitalRead(button_pin) == HIGH && button_pressed == false){
+  float current_mA = 0;
+  current_mA = ina219.getCurrent_mA();
+  
+  if(current_mA > 315.0 && button_pressed == false){
+    tone(buzz_pin, 261, 100);
+    delay(100);
     button_pressed = true;
-    rand_spin = random(0,8);
+    rand_spin = random(1,9);
     current_fortune += rand_spin;
     current_fortune %= 8;
     myStepper.step((spr/8)*rand_spin);

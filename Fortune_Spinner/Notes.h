@@ -1,6 +1,8 @@
 /*this file is needed to generate the music when the fortune wheel is spinning. Included is a header
  * file called pitches which imports every possible note that can be generated electronically. 
  */
+#include "pitches.h"
+ 
 void fortune1(int buzz_pin)
 {
   //Note melody and duration of fortune1
