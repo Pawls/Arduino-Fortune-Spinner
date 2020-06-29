@@ -1,6 +1,9 @@
 #include <Wire.h>
 #include <Stepper.h>
 #include <LiquidCrystal.h>
+#include <Notes.h>
+#include <pitches.h>
+
 
 //Pin definitions
 const int button_pin = 12;
@@ -40,48 +43,55 @@ void loop() {
 
 void displayFortune(int roll){
   lcd.clear();
-  tone(buzz_pin, 261, 100);
   delay(200);
   switch(roll){
     case 0:
       lcd.print("Be self-aware");
       lcd.setCursor(0,1);
       lcd.print("of your mistakes");
+      fortune1(buzz_pin);
       break;
     case 1:
       lcd.print("It is not unwise");
       lcd.setCursor(0,1);
       lcd.print("to ask for help");
+      fortune2(buzz_pin);
       break;
     case 2:
       lcd.print("Practice creates");
       lcd.setCursor(0,1);
       lcd.print("perfection");
+      fortune3(buzz_pin);
       break;
     case 3:
       lcd.print("Knowledge will");
       lcd.setCursor(0,1);
       lcd.print("come with time");
+      fortune4(buzz_pin);      
       break;
     case 4:
       lcd.print("Give first in");
       lcd.setCursor(0,1);
       lcd.print("order to take");
+      fortune5(buzz_pin);      
       break;
     case 5:
       lcd.print("Good things can");
       lcd.setCursor(0,1);
       lcd.print("be unexpected");
+      fortune6(buzz_pin);      
       break;
     case 6:
       lcd.print("Love truth,");
       lcd.setCursor(0,1);
       lcd.print("but pardon error");
+      fortune7(buzz_pin);      
       break;
     case 7:
       lcd.print("Welcome changes");
-      lcd.setCursor(0,1);
+      lcd.setCursor(0,1); 
       lcd.print("in your life");
+      fortune8(buzz_pin);      
       break;
   }
   delay(1000);
