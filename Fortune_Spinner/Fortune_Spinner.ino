@@ -27,10 +27,10 @@ void setup() {
   myStepper.setSpeed(13);
   lcd.begin(16, 2);
   lcd.print("Fortune Spinner");
+  myStepper.step((spr/8)*8);
 }
 
 void loop() {
-  //Serial.println(digitalRead(buzz_pin));
   if(digitalRead(button_pin) == HIGH && button_pressed == false){
     button_pressed = true;
     rand_spin = random(0,8);
@@ -46,52 +46,52 @@ void displayFortune(int roll){
   delay(200);
   switch(roll){
     case 0:
-      lcd.print("ROLLED FORTUNE 1");
+      lcd.print("Be self-aware");
       lcd.setCursor(0,1);
-      lcd.print("Learn from mistakes to improve");
+      lcd.print("of your mistakes");
       fortune1(buzz_pin);
       break;
     case 1:
-      lcd.print("ROLLED FORTUNE 2");
+      lcd.print("It is not unwise");
       lcd.setCursor(0,1);
-      lcd.print("It is not unwise to ask for help");
+      lcd.print("to ask for help");
       fortune2(buzz_pin);
       break;
     case 2:
-      lcd.print("ROLLED FORTUNE 3");
+      lcd.print("Practice creates");
       lcd.setCursor(0,1);
-      lcd.print("Practice makes perfect");
+      lcd.print("perfection");
       fortune3(buzz_pin);
       break;
     case 3:
-      lcd.print("ROLLED FORTUNE 4");
+      lcd.print("Knowledge will");
       lcd.setCursor(0,1);
-      lcd.print("Knowledge comes with time");
-      fortune4(buzz_pin);
+      lcd.print("come with time");
+      fortune4(buzz_pin);      
       break;
     case 4:
-      lcd.print("ROLLED FORTUNE 5");
+      lcd.print("Give first in");
       lcd.setCursor(0,1);
-      lcd.print("Give first in order to take");
-      fortune5(buzz_pin);
+      lcd.print("order to take");
+      fortune5(buzz_pin);      
       break;
     case 5:
-      lcd.print("ROLLED FORTUNE 6");
+      lcd.print("Good things can");
       lcd.setCursor(0,1);
-      lcd.print("Good things can be unexpected");
-      fortune6(buzz_pin);
+      lcd.print("be unexpected");
+      fortune6(buzz_pin);      
       break;
     case 6:
-      lcd.print("ROLLED FORTUNE 7");
+      lcd.print("Love truth,");
       lcd.setCursor(0,1);
-      lcd.print("It is time to try something new");
-      fortune7(buzz_pin);
+      lcd.print("but pardon error");
+      fortune7(buzz_pin);      
       break;
     case 7:
-      lcd.print("ROLLED FORTUNE 8");
-      lcd.setCursor(0,1);
-      lcd.print("Welcome changes in your life");
-      fortune8(buzz_pin); 
+      lcd.print("Welcome changes");
+      lcd.setCursor(0,1); 
+      lcd.print("in your life");
+      fortune8(buzz_pin);      
       break;
   }
   delay(1000);
