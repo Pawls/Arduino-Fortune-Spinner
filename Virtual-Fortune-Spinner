@@ -1,0 +1,50 @@
+import random
+import time
+
+#ask user if they would like to play a game fortune
+#if yes, spin the fortune, print the fortune, play melody and then ask if they would like to go again.
+
+def fortune():
+  keep_going = 'y'
+  if keep_going == 'y':
+    print(input("Ask your question, then fortune's wheels will spin: "))
+    print("Please stand-by while we decide your fate.\n")
+    time.sleep(2)
+    print("...")
+    time.sleep(1)
+    print("....")
+    time.sleep(1)
+    print(".....")
+    time.sleep(1)
+    print("...where it stops nobody knows...\n")
+    time.sleep(3)
+    print("Your fate has been decided.\n ")
+    time.sleep(2)
+
+    fortune_num = random.randint(1,8)
+    if fortune_num == 1:
+      print("Be self-aware of your mistakes")
+    elif fortune_num == 2:
+      print("It is not unwise to ask for help.")
+    elif fortune_num == 3:
+      print("Practice makes perfect.")
+    elif fortune_num == 4:
+      print("Knowledge will come with time.")
+    elif fortune_num == 5:
+      print("Give first in order to take.")
+    elif fortune_num == 6:
+      print("Good things can be unexpected.")
+    elif fortune_num == 7:
+      print("Love truth, but pardon error.")
+    elif fortune_num == 8:
+      print("Welcome new changes.")
+  time.sleep(1)
+  keep_going = (input("\nWould you like to spin again?(y/n) "))
+  if keep_going == 'y':
+    fortune()
+  else:
+    print("\nThank you for playing!\n")
+    time.sleep(1)
+    print("...may fortune be on your side...")
+
+fortune()
