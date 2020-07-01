@@ -1,0 +1,79 @@
+import random
+import time
+import math
+import winsound
+
+labels = ['a','a#','b','c','c#','d','d#','e','f','f#','g','g#']
+name   = lambda n: labels[n%len(labels)] + str(int((n+(9+4*12))/12))
+freq   = lambda n: int(440*(math.pow(2,1/12)**n))
+notes  = {name(n): freq(n) for n in range(-42,60)}
+period = lambda tempo: 1/(tempo/60)
+
+def play(song, tempo):
+    for note in song.lower().split():
+        if note in notes.keys():
+            winsound.Beep(notes[note], int(period(tempo)*1000))
+        else:
+            time.sleep(period(tempo))
+
+def fortune():
+  keep_going = 'y'
+  if keep_going == 'y':
+    print(input("Ask your question, then fortune's wheels will spin: "))
+    print("Please stand-by while we decide your fate.\n")
+    time.sleep(2)
+    print("...")
+    play('A4 A4 A4', 350)
+    time.sleep(1)
+    print("....")
+    play('A4 A4 A4 A5', 350)
+    time.sleep(1)
+    print(".....")
+    play('A4 A4 A4 A5 A4', 350)
+    time.sleep(1)
+    print("...where it stops nobody knows...\n")
+    time.sleep(3)
+    play('A6', 400)
+    print("Your fate has been decided.\n ")
+    time.sleep(2)
+
+    fortune_num = random.randint(1,8)
+    if fortune_num == 1:
+      play('A4 A4 A4 G4 r A4 r E4', 350)
+      print("Be self-aware of your mistakes")
+    elif fortune_num == 2:
+      play('A4 C4 F4 C4 A4 C4 F4 G4', 350)
+      print("It is not unwise to ask for help.")
+    elif fortune_num == 3:
+      play('D#4 F4 G4 G#5 A#4 G5 G5 A#5 D#4 F6 G#4 A#5', 350)
+      print("Practice makes perfect.")
+    elif fortune_num == 4:
+      play('E4 B4 D#5 E4 B4 D#5 E4 B4', 350)
+      print("Knowledge will come with time.")
+    elif fortune_num == 5:
+      play('C4 D#4 E3 A#2 r A4 r E4', 350)
+      print("Give first in order to take.")
+    elif fortune_num == 6:
+      play('C5 D5 E5 F5 G5 A5 B5 C6', 350)
+      print("Good things can be unexpected.")
+    elif fortune_num == 7:
+      play('B4 A4 D5 E5 A4 C#4 B4 B4', 350)
+      print("Love truth, but pardon error.")
+    elif fortune_num == 8:
+      play('C#5 D#5 F5 F#5 G#5 F#5 F5 D#5', 350)
+      print("Welcome new changes.")
+  time.sleep(1)
+  keep_going = (input("\nWould you like to spin again?(y/n) ")).lower().strip()
+  if keep_going == 'y':
+    fortune()
+  else:
+    print("\nThank you for playing!\n")
+    play('D#4 F4 G4 G#5 A#4 G5 G5 A#5 D#4 F6 G#4 A#5', 350)
+    time.sleep(2)
+    print("...\n")
+    play('D6 D6 D6', 350)
+    time.sleep(1)
+    print("...may fortune be on your side...")
+    
+
+fortune()
